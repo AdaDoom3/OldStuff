@@ -291,11 +291,11 @@
 //      ...error handle...
 //
   
-  #define Next_Set(p,t,dl,dr) Next_Set_(p,t,sizeof(t),dl,dr) // Get rid of that sizeof
+  #define Next_Set(p,t,dl,dr) Next_Set_(p,t,sizeof(t),dl,dr) 
   int Next_Set_(
           Struct_Parser *Parser,
           char          *Target,
-    const int           Target_Size, // Target_Size is handled by the macro above, so ignore it
+    const int           Target_Size,
     const char          *Delimiter_Left,
     const char          *Delimiter_Right
   ){
@@ -364,11 +364,11 @@
 //      ...error handle...
 //
      
-  #define Next_String(p,t) Next_String_(p,t,sizeof(t)) // Get rid of that sizeof
+  #define Next_String(p,t) Next_String_(p,t,sizeof(t)) 
   int Next_String_(
           Struct_Parser *Parser,
           char          *Target,
-    const int           Target_Size // Target_Size is handled by the macro above, so ignore it
+    const int           Target_Size 
   ){
     // Index for Target 
     int i = 0;
@@ -416,10 +416,10 @@
 //    If the number type of the target is not of the type the conversion function assumes, bad things will happen.
 //
    
-  #define Next_Number(p,t,f) Next_Number_(p,&t,f) // A little something I call pass by reference
+  #define Next_Number(p,t,f) Next_Number_(p,&t,f)
   int Next_Number_(
     Struct_Parser *Parser,
-    void          *Target, // The macro above takes care of the pointer type casting, so send a regular variable
+    void          *Target, 
     void (*Convert)(
             void *Target,
       const char *String
